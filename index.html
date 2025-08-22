@@ -12,40 +12,41 @@
 <body>
     <header>
         <h1>My Calculator</h1>
-        <button>Dark/Bright Mode</button>
+        <button id="toggle"><div id="circle"></div></button>
     </header>
     <main>
-        <div class="screen"></div>
+        <div class="screen display">0</div>
         <div class="buttons">
-            <div class="opRow">
-                <button>root</button>
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-            </div>
-            <div class="opCol">
-                <button>/</button>
-                <button>%</button>
-                <button>=</button>
-            </div>
-            <div class="numbers">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-            </div>
-            <div class="zero">
-                <button>0</button>
-                <button>.</button>
-            </div>
+            <button class="btn clear" id="btn_C">C</button>
+            <button class="btn operator" id="btn_divided">/</button>
+            <button class="btn operator" id="btn_times">*</button>
+            <button class="btn percent" id="btn_percentage">%</button>
+            
+            <button class="btn number" id="btn_7">7</button>
+            <button class="btn number" id="btn_8">8</button>
+            <button class="btn number" id="btn_9">9</button>
+            <button class="btn2 operator" id="btn_plus">+</button>
+            
+            <button class="btn number" id="btn_4">4</button>
+            <button class="btn number" id="btn_5">5</button>
+            <button class="btn number" id="btn_6">6</button>
+            <button class="btn2 operator" id="btn_minus">-</button>
+            
+            
+            <button class="btn number" id="btn_1">1</button>
+            <button class="btn number" id="btn_2">2</button>
+            <button class="btn number" id="btn_3">3</button>
+            <button class="equals" id="btn_equals">=</button>
 
+            <button class="zero number" id="btn_0">0</button>
+            <button class="btn dot" id="btn_dot">.</button>
+            
+            
+            
         </div>
     </main>
-    <footer><h5>© 2025 My Calculator | Designed by [Nadeem Hassan]</h5></footer>
+    <footer><h>© 2025 My Calculator | Designed by [Nadeem Hassan]</h5></footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
