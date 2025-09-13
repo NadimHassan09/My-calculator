@@ -12,6 +12,51 @@
 }
 /* Global End */
 
+/* Animation start */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideright {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideleft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation End */
+
 :root{
     --bg-color:#F5F5F6;
     --main-color:#FAFAFA;
@@ -42,7 +87,10 @@ header{
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--text-color);
+    animation: slideDown 0.8s ease forwards;
+
 
 }
 header button{
@@ -80,6 +128,8 @@ main{
     width: 30%;
     border-radius: 10px;
     box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+    animation: slideright 0.8s ease forwards;
+
    
 }
 /* main end */
@@ -145,7 +195,9 @@ main{
 
 /* footer start */
 footer{
-      color: var(--text-color);
+    color: var(--text-color);
+    animation: slideup 0.8s ease forwards;
+
 
 }
 /* footer end */
@@ -207,7 +259,7 @@ body {
 /* شاشات كبيرة جداً */
 @media (min-width: 1200px) {
   header, main {
-    max-width: 600px; /* متخليش الآلة تكبر زيادة */
+    max-width: 650px; /* متخليش الآلة تكبر زيادة */
   }
 }
 
@@ -243,15 +295,15 @@ body {
 
 /* الديسكتوب العادي والفوق */
 @media (min-width: 769px) {
-  header button {
-    width: 80px;
-    height: 40px;
+   header button {
+    width: 70px;
+    height: 35px;
     transform: scale(0.5);
   }
 
   header button div {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 }
 
