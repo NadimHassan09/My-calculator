@@ -1,0 +1,310 @@
+/* font-import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-import - End */
+
+/* Global start */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+}
+/* Global End */
+
+/* Animation start */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideright {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideleft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation End */
+
+:root{
+    --bg-color:#F5F5F6;
+    --main-color:#FAFAFA;
+    --btn-color:#EDEEEF;
+    --equals-color: #7EC6A1;
+    --secondry-color:#8FBEF2;
+    --text-color:black;
+    --toggle-btn-color:white;
+    --circle-color:#4CAF50;
+}
+
+/*body start*/
+body{
+    background-color: var(--bg-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+/*body end*/
+
+/* header start */
+header{
+    /* background-color: red; */
+    width: 30%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    animation: slideDown 0.8s ease forwards;
+
+
+}
+header button{
+    width: 80px;
+    color: var(--text-color);
+    background-color: var(--toggle-btn-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+    border-radius: 50px;
+    transform: scale(0.5);
+    border: 1px black solid;
+    display: flex;
+    align-items: center;
+    
+}
+header button div{
+    width: 40px;
+    height: 40px;
+    background-color: var(--circle-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+    border-radius: 50%;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+
+/* header end */
+
+/* main start */
+main{
+    background-color: var(--main-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
+    animation: slideright 0.8s ease forwards;
+
+   
+}
+/* main end */
+
+/* screen start */
+.screen{
+    height: 25%;
+    /* background-color: blue; */
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-color);
+    overflow: hidden;
+
+
+}
+/* screen end */
+
+/* buttons start */
+.buttons{
+    height: 75%;
+    /* background-color: brown; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 0 20px 20px;
+
+}
+
+.buttons button{
+    padding: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.btn{
+      background-color: var(--btn-color);
+        transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+.zero {
+  grid-column: span 2;
+  background-color: var(--btn-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+
+}
+.btn2{
+    background-color: var(--secondry-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+.equals{
+    grid-row: span 2;
+    background-color: var(--equals-color);
+      transition: background-color 0.5s ease, color 0.5s ease;
+
+}
+/* buttons end*/
+
+/* footer start */
+footer{
+    color: var(--text-color);
+    animation: slideup 0.8s ease forwards;
+
+
+}
+/* footer end */
+
+/* responsive design start */
+
+/* -------- Global responsiveness fixes -------- */
+
+/* بدل الـ width الثابت */
+header, main {
+  width: 30%;
+  max-width: 500px;  /* الماكس عرض على الديسكتوب */
+  min-width: 280px;  /* أصغر عرض على الموبايل */
+}
+
+/* عشان ال body يبقى centered */
+body {
+  padding: 10px;
+}
+
+/* شاشة الآلة */
+.screen {
+  font-size: clamp(20px, 5vw, 32px); /* حجم خط متجاوب */
+}
+
+/* الأزرار */
+.buttons button {
+  font-size: clamp(16px, 4vw, 20px);
+  padding: clamp(12px, 3vw, 20px);
+}
+
+/* -------- Media queries -------- */
+
+/* موبايل أصغر من 480px */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  header button {
+    transform: scale(0.5); /* عشان الزرار يبان كويس */
+  }
+
+  .buttons {
+    grid-gap: 8px;
+    padding: 0 10px 10px;
+  }
+}
+
+/* تابلت (481px – 768px) */
+@media (max-width: 768px) {
+  header, main {
+    max-width: 90%;
+  }
+}
+
+/* شاشات كبيرة جداً */
+@media (min-width: 1200px) {
+  header, main {
+    max-width: 650px; /* متخليش الآلة تكبر زيادة */
+  }
+}
+
+
+@media (max-width: 480px) {
+  header button {
+    width: 60px;       /* أصغر من الـ default */
+    height: 30px;
+    transform: scale(0.5); /* بلاش تصغير ثابت */
+    border-radius: 30px;
+  }
+
+  header button div {
+    width: 24px;
+    height: 24px;
+    transform: scale(0.5);
+  }
+}
+
+/* التابلت (بين 481px – 768px) */
+@media (max-width: 768px) {
+  header button {
+    width: 70px;
+    height: 35px;
+    transform: scale(0.5);
+  }
+
+  header button div {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* الديسكتوب العادي والفوق */
+@media (min-width: 769px) {
+   header button {
+    width: 70px;
+    height: 35px;
+    transform: scale(0.5);
+  }
+
+  header button div {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* responsive design end */
