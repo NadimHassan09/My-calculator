@@ -77,12 +77,12 @@ body{
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    padding: 10px;
 }
 /*body end*/
 
 /* header start */
 header{
-    /* background-color: red; */
     width: 30%;
     margin-top: 20px;
     display: flex;
@@ -90,6 +90,8 @@ header{
     align-items: center;
     color: var(--text-color);
     animation: slideDown 0.8s ease forwards;
+    max-width: 500px; 
+    min-width: 280px;  
 
 
 }
@@ -110,8 +112,7 @@ header button div{
     width: 40px;
     height: 40px;
     background-color: var(--circle-color);
-      transition: background-color 0.5s ease, color 0.5s ease;
-
+    transition: background-color 0.5s ease, color 0.5s ease;
     border-radius: 50%;
     transform: scale(0.8);
     transition: transform 0.3s ease;
@@ -129,20 +130,33 @@ main{
     border-radius: 10px;
     box-shadow: 0 0px 15px rgba(0, 0, 0, 0.15);
     animation: slideright 0.8s ease forwards;
+    width: 30%;
+    max-width: 500px; 
+    min-width: 280px;  
 
    
 }
 /* main end */
 
 /* screen start */
+.screenHolder{
+  padding: 20px;
+}
+.screenNum1{
+  min-height: 14pt;
+  color: gray;
+  overflow-wrap: break-word;
+
+}
 .screen{
-    height: 25%;
-    /* background-color: blue; */
-    padding: 20px;
+    min-height: 25%;
     font-size: 32px;
     font-weight: 600;
     color: var(--text-color);
     overflow: hidden;
+    overflow-wrap: break-word;
+    font-size: clamp(20px, 5vw, 32px); 
+
 
 
 }
@@ -167,6 +181,8 @@ main{
   border-radius: 10px;
   cursor: pointer;
   color: var(--text-color);
+   font-size: clamp(16px, 4vw, 20px);
+  padding: clamp(12px, 3vw, 20px);
 }
 .btn{
       background-color: var(--btn-color);
@@ -204,34 +220,8 @@ footer{
 
 /* responsive design start */
 
-/* -------- Global responsiveness fixes -------- */
-
-/* بدل الـ width الثابت */
-header, main {
-  width: 30%;
-  max-width: 500px;  /* الماكس عرض على الديسكتوب */
-  min-width: 280px;  /* أصغر عرض على الموبايل */
-}
-
-/* عشان ال body يبقى centered */
-body {
-  padding: 10px;
-}
-
-/* شاشة الآلة */
-.screen {
-  font-size: clamp(20px, 5vw, 32px); /* حجم خط متجاوب */
-}
-
-/* الأزرار */
-.buttons button {
-  font-size: clamp(16px, 4vw, 20px);
-  padding: clamp(12px, 3vw, 20px);
-}
-
 /* -------- Media queries -------- */
 
-/* موبايل أصغر من 480px */
 @media (max-width: 480px) {
   header {
     flex-direction: column;
@@ -240,7 +230,7 @@ body {
   }
 
   header button {
-    transform: scale(0.5); /* عشان الزرار يبان كويس */
+    transform: scale(0.5); 
   }
 
   .buttons {
@@ -249,26 +239,25 @@ body {
   }
 }
 
-/* تابلت (481px – 768px) */
 @media (max-width: 768px) {
   header, main {
     max-width: 90%;
   }
 }
 
-/* شاشات كبيرة جداً */
+
 @media (min-width: 1200px) {
   header, main {
-    max-width: 650px; /* متخليش الآلة تكبر زيادة */
+    max-width: 650px; 
   }
 }
 
 
 @media (max-width: 480px) {
   header button {
-    width: 60px;       /* أصغر من الـ default */
+    width: 60px;      
     height: 30px;
-    transform: scale(0.5); /* بلاش تصغير ثابت */
+    transform: scale(0.5); 
     border-radius: 30px;
   }
 
@@ -279,7 +268,6 @@ body {
   }
 }
 
-/* التابلت (بين 481px – 768px) */
 @media (max-width: 768px) {
   header button {
     width: 70px;
@@ -293,7 +281,6 @@ body {
   }
 }
 
-/* الديسكتوب العادي والفوق */
 @media (min-width: 769px) {
    header button {
     width: 70px;
