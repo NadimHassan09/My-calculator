@@ -160,3 +160,4 @@ document.querySelectorAll(".percent").forEach(percentbtn =>{ percentbtn.addEvent
 //handle keyboard entry
 
 document.querySelectorAll(".number").forEach(btn =>{ btn.addEventListener("keydown", (event) => {appendNumber(btn.innerText)})});
+//
